@@ -1,0 +1,240 @@
+15:58:49 **** Incremental Build of configuration Default for project F407_microros ****
+make all 
+arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32F407xx -ICore/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -IDrivers/CMSIS/Device/ST/STM32F4xx/Include -IDrivers/CMSIS/Include -Imicro_ros_stm32cubemx_utils/microros_static_library/libmicroros/microros_include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -MMD -MP -MF"build/main.d" -Wa,-a,-ad,-alms=build/main.lst Core/Src/main.c -o build/main.o
+Core/Src/main.c:51:1: error: unknown type name 'PCD_HandleTypeDef'; did you mean 'TIM_HandleTypeDef'?
+   51 | PCD_HandleTypeDef hpcd_USB_OTG_FS;
+      | ^~~~~~~~~~~~~~~~~
+      | TIM_HandleTypeDef
+Core/Src/main.c:67:13: error: static declaration of 'MX_GPIO_Init' follows non-static declaration
+   67 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+In file included from Core/Src/main.c:24:
+Core/Inc/gpio.h:39:6: note: previous declaration of 'MX_GPIO_Init' with type 'void(void)'
+   39 | void MX_GPIO_Init(void);
+      |      ^~~~~~~~~~~~
+Core/Src/main.c:68:13: error: static declaration of 'MX_DMA_Init' follows non-static declaration
+   68 | static void MX_DMA_Init(void);
+      |             ^~~~~~~~~~~
+In file included from Core/Src/main.c:22:
+Core/Inc/dma.h:41:6: note: previous declaration of 'MX_DMA_Init' with type 'void(void)'
+   41 | void MX_DMA_Init(void);
+      |      ^~~~~~~~~~~
+Core/Src/main.c: In function 'SystemClock_Config':
+Core/Src/main.c:168:25: error: 'RCC_PLLInitTypeDef' has no member named 'PLLR'; did you mean 'PLLM'?
+  168 |   RCC_OscInitStruct.PLL.PLLR = 2;
+      |                         ^~~~
+      |                         PLLM
+Core/Src/main.c:187:46: error: 'RCC_PERIPHCLK_CLK48' undeclared (first use in this function); did you mean 'RCC_PERIPHCLK_CK48'?
+  187 |   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_CLK48;
+      |                                              ^~~~~~~~~~~~~~~~~~~
+      |                                              RCC_PERIPHCLK_CK48
+Core/Src/main.c:187:46: note: each undeclared identifier is reported only once for each function it appears in
+Core/Src/main.c:188:23: error: 'RCC_PeriphCLKInitTypeDef' has no member named 'Clk48ClockSelection'; did you mean 'RTCClockSelection'?
+  188 |   PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48CLKSOURCE_PLLQ;
+      |                       ^~~~~~~~~~~~~~~~~~~
+      |                       RTCClockSelection
+Core/Src/main.c:188:45: error: 'RCC_CLK48CLKSOURCE_PLLQ' undeclared (first use in this function); did you mean 'RCC_CK48CLKSOURCE_PLLQ'?
+  188 |   PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48CLKSOURCE_PLLQ;
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                             RCC_CK48CLKSOURCE_PLLQ
+Core/Src/main.c: In function 'MX_USB_OTG_FS_PCD_Init':
+Core/Src/main.c:243:18: error: request for member 'Instance' in something not a structure or union
+  243 |   hpcd_USB_OTG_FS.Instance = USB_OTG_FS;
+      |                  ^
+Core/Src/main.c:244:18: error: request for member 'Init' in something not a structure or union
+  244 |   hpcd_USB_OTG_FS.Init.dev_endpoints = 6;
+      |                  ^
+Core/Src/main.c:245:18: error: request for member 'Init' in something not a structure or union
+  245 |   hpcd_USB_OTG_FS.Init.speed = PCD_SPEED_FULL;
+      |                  ^
+Core/Src/main.c:245:32: error: 'PCD_SPEED_FULL' undeclared (first use in this function)
+  245 |   hpcd_USB_OTG_FS.Init.speed = PCD_SPEED_FULL;
+      |                                ^~~~~~~~~~~~~~
+Core/Src/main.c:246:18: error: request for member 'Init' in something not a structure or union
+  246 |   hpcd_USB_OTG_FS.Init.dma_enable = DISABLE;
+      |                  ^
+Core/Src/main.c:247:18: error: request for member 'Init' in something not a structure or union
+  247 |   hpcd_USB_OTG_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+      |                  ^
+Core/Src/main.c:247:37: error: 'PCD_PHY_EMBEDDED' undeclared (first use in this function)
+  247 |   hpcd_USB_OTG_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+      |                                     ^~~~~~~~~~~~~~~~
+Core/Src/main.c:248:18: error: request for member 'Init' in something not a structure or union
+  248 |   hpcd_USB_OTG_FS.Init.Sof_enable = ENABLE;
+      |                  ^
+Core/Src/main.c:249:18: error: request for member 'Init' in something not a structure or union
+  249 |   hpcd_USB_OTG_FS.Init.low_power_enable = DISABLE;
+      |                  ^
+Core/Src/main.c:250:18: error: request for member 'Init' in something not a structure or union
+  250 |   hpcd_USB_OTG_FS.Init.lpm_enable = DISABLE;
+      |                  ^
+Core/Src/main.c:251:18: error: request for member 'Init' in something not a structure or union
+  251 |   hpcd_USB_OTG_FS.Init.vbus_sensing_enable = ENABLE;
+      |                  ^
+Core/Src/main.c:252:18: error: request for member 'Init' in something not a structure or union
+  252 |   hpcd_USB_OTG_FS.Init.use_dedicated_ep1 = DISABLE;
+      |                  ^
+Core/Src/main.c:253:7: warning: implicit declaration of function 'HAL_PCD_Init'; did you mean 'HAL_DeInit'? [-Wimplicit-function-declaration]
+  253 |   if (HAL_PCD_Init(&hpcd_USB_OTG_FS) != HAL_OK)
+      |       ^~~~~~~~~~~~
+      |       HAL_DeInit
+Core/Src/main.c: In function 'MX_GPIO_Init':
+Core/Src/main.c:300:28: error: 'LD1_Pin' undeclared (first use in this function)
+  300 |   HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
+      |                            ^~~~~~~
+Core/Src/main.c:300:36: error: 'LD3_Pin' undeclared (first use in this function)
+  300 |   HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
+      |                                    ^~~~~~~
+Core/Src/main.c:300:44: error: 'LD2_Pin' undeclared (first use in this function)
+  300 |   HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
+      |                                            ^~~~~~~
+Core/Src/main.c:303:21: error: 'USB_PowerSwitchOn_GPIO_Port' undeclared (first use in this function)
+  303 |   HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:303:50: error: 'USB_PowerSwitchOn_Pin' undeclared (first use in this function)
+  303 |   HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:306:25: error: 'USER_Btn_Pin' undeclared (first use in this function)
+  306 |   GPIO_InitStruct.Pin = USER_Btn_Pin;
+      |                         ^~~~~~~~~~~~
+Core/Src/main.c:309:17: error: 'USER_Btn_GPIO_Port' undeclared (first use in this function)
+  309 |   HAL_GPIO_Init(USER_Btn_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~
+Core/Src/main.c:326:25: error: 'USB_OverCurrent_Pin' undeclared (first use in this function)
+  326 |   GPIO_InitStruct.Pin = USB_OverCurrent_Pin;
+      |                         ^~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:329:17: error: 'USB_OverCurrent_GPIO_Port' undeclared (first use in this function)
+  329 |   HAL_GPIO_Init(USB_OverCurrent_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c: In function 'StartDefaultTask':
+Core/Src/main.c:349:3: warning: implicit declaration of function 'rmw_uros_set_custom_transport' [-Wimplicit-function-declaration]
+  349 |   rmw_uros_set_custom_transport(
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:350:5: error: 'true' undeclared (first use in this function)
+  350 |     true,
+      |     ^~~~
+Core/Src/main.c:25:1: note: 'true' is defined in header '<stdbool.h>'; did you forget to '#include <stdbool.h>'?
+   24 | #include "gpio.h"
+  +++ |+#include <stdbool.h>
+   25 | 
+Core/Src/main.c:352:5: error: 'cubemx_transport_open' undeclared (first use in this function)
+  352 |     cubemx_transport_open,
+      |     ^~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:353:5: error: 'cubemx_transport_close' undeclared (first use in this function)
+  353 |     cubemx_transport_close,
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:354:5: error: 'cubemx_transport_write' undeclared (first use in this function)
+  354 |     cubemx_transport_write,
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:355:5: error: 'cubemx_transport_read' undeclared (first use in this function)
+  355 |     cubemx_transport_read);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:357:3: error: unknown type name 'rcl_allocator_t'
+  357 |   rcl_allocator_t freeRTOS_allocator = rcutils_get_zero_initialized_allocator();
+      |   ^~~~~~~~~~~~~~~
+Core/Src/main.c:357:40: warning: implicit declaration of function 'rcutils_get_zero_initialized_allocator' [-Wimplicit-function-declaration]
+  357 |   rcl_allocator_t freeRTOS_allocator = rcutils_get_zero_initialized_allocator();
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:358:21: error: request for member 'allocate' in something not a structure or union
+  358 |   freeRTOS_allocator.allocate = microros_allocate;
+      |                     ^
+Core/Src/main.c:358:33: error: 'microros_allocate' undeclared (first use in this function)
+  358 |   freeRTOS_allocator.allocate = microros_allocate;
+      |                                 ^~~~~~~~~~~~~~~~~
+Core/Src/main.c:359:21: error: request for member 'deallocate' in something not a structure or union
+  359 |   freeRTOS_allocator.deallocate = microros_deallocate;
+      |                     ^
+Core/Src/main.c:359:35: error: 'microros_deallocate' undeclared (first use in this function)
+  359 |   freeRTOS_allocator.deallocate = microros_deallocate;
+      |                                   ^~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:360:21: error: request for member 'reallocate' in something not a structure or union
+  360 |   freeRTOS_allocator.reallocate = microros_reallocate;
+      |                     ^
+Core/Src/main.c:360:35: error: 'microros_reallocate' undeclared (first use in this function)
+  360 |   freeRTOS_allocator.reallocate = microros_reallocate;
+      |                                   ^~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:361:21: error: request for member 'zero_allocate' in something not a structure or union
+  361 |   freeRTOS_allocator.zero_allocate =  microros_zero_allocate;
+      |                     ^
+Core/Src/main.c:361:39: error: 'microros_zero_allocate' undeclared (first use in this function)
+  361 |   freeRTOS_allocator.zero_allocate =  microros_zero_allocate;
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:363:8: warning: implicit declaration of function 'rcutils_set_default_allocator' [-Wimplicit-function-declaration]
+  363 |   if (!rcutils_set_default_allocator(&freeRTOS_allocator)) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:364:7: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  364 |       printf("Error on default allocators (line %d)\n", __LINE__);
+      |       ^~~~~~
+Core/Src/main.c:25:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   24 | #include "gpio.h"
+  +++ |+#include <stdio.h>
+   25 | 
+Core/Src/main.c:364:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  364 |       printf("Error on default allocators (line %d)\n", __LINE__);
+      |       ^~~~~~
+Core/Src/main.c:364:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+Core/Src/main.c:369:3: error: unknown type name 'rcl_publisher_t'
+  369 |   rcl_publisher_t publisher;
+      |   ^~~~~~~~~~~~~~~
+Core/Src/main.c:370:3: error: unknown type name 'std_msgs__msg__Int32'
+  370 |   std_msgs__msg__Int32 msg;
+      |   ^~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:371:3: error: unknown type name 'rclc_support_t'
+  371 |   rclc_support_t support;
+      |   ^~~~~~~~~~~~~~
+Core/Src/main.c:372:3: error: unknown type name 'rcl_allocator_t'
+  372 |   rcl_allocator_t allocator;
+      |   ^~~~~~~~~~~~~~~
+Core/Src/main.c:373:3: error: unknown type name 'rcl_node_t'
+  373 |   rcl_node_t node;
+      |   ^~~~~~~~~~
+Core/Src/main.c:375:15: warning: implicit declaration of function 'rcl_get_default_allocator' [-Wimplicit-function-declaration]
+  375 |   allocator = rcl_get_default_allocator();
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:378:3: warning: implicit declaration of function 'rclc_support_init' [-Wimplicit-function-declaration]
+  378 |   rclc_support_init(&support, 0, NULL, &allocator);
+      |   ^~~~~~~~~~~~~~~~~
+Core/Src/main.c:381:3: warning: implicit declaration of function 'rclc_node_init_default' [-Wimplicit-function-declaration]
+  381 |   rclc_node_init_default(&node, "cubemx_node", "", &support);
+      |   ^~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:384:3: warning: implicit declaration of function 'rclc_publisher_init_default' [-Wimplicit-function-declaration]
+  384 |   rclc_publisher_init_default(
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:387:5: warning: implicit declaration of function 'ROSIDL_GET_MSG_TYPE_SUPPORT' [-Wimplicit-function-declaration]
+  387 |     ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Core/Src/main.c:387:33: error: 'std_msgs' undeclared (first use in this function)
+  387 |     ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+      |                                 ^~~~~~~~
+Core/Src/main.c:387:48: error: 'Int32' undeclared (first use in this function); did you mean 'int32_t'?
+  387 |     ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
+      |                                                ^~~~~
+      |                                                int32_t
+Core/Src/main.c:390:6: error: request for member 'data' in something not a structure or union
+  390 |   msg.data = 0;
+      |      ^
+Core/Src/main.c:394:5: error: unknown type name 'rcl_ret_t'
+  394 |     rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
+      |     ^~~~~~~~~
+Core/Src/main.c:394:21: warning: implicit declaration of function 'rcl_publish' [-Wimplicit-function-declaration]
+  394 |     rcl_ret_t ret = rcl_publish(&publisher, &msg, NULL);
+      |                     ^~~~~~~~~~~
+Core/Src/main.c:395:16: error: 'RCL_RET_OK' undeclared (first use in this function)
+  395 |     if (ret != RCL_RET_OK)
+      |                ^~~~~~~~~~
+Core/Src/main.c:397:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  397 |       printf("Error publishing (line %d)\n", __LINE__);
+      |       ^~~~~~
+Core/Src/main.c:397:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+Core/Src/main.c:400:8: error: request for member 'data' in something not a structure or union
+  400 |     msg.data++;
+      |        ^
+Core/Src/main.c: At top level:
+Core/Src/main.c:200:13: warning: 'MX_USART3_UART_Init' defined but not used [-Wunused-function]
+  200 | static void MX_USART3_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+make: *** [Makefile:204: build/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+15:58:50 Build Failed. 54 errors, 14 warnings. (took 936ms)
+
